@@ -29,31 +29,31 @@ function badit() {
     console.log(dg_ids);
     console.log(dg_ans);
 
-    // $.post("AssessAction?SetAction=answer",
-    //     {
-    //         id: dg_ids,
-    //         answer: dg_ans,
-    //         assess_id: $("input[name='assess_id']").val(),
-    //         templateFlag: "0"
-    //     },
-    //     function() {
-    //         if (data.flag) {
-    //             alert("教务君说提交成功了！");
-    //         } else {
-    //             alert(data.error);
-    //         }
-    // });
+    $.post("AssessAction?SetAction=answer",
+        {
+            id: dg_ids,
+            answer: dg_ans,
+            assess_id: $("input[name='assess_id']").val(),
+            templateFlag: "0"
+        },
+        function() {
+            if (data.flag) {
+                alert("教务君说提交成功了！");
+            } else {
+                alert(data.error);
+            }
+    });
 }
 
 var inp = document.getElementsByTagName("input");
-var xxx;
+var input_btn;
 
 for (var i = 0; i < inp.length; ++ i){
     if (inp[i].value === "提交"){
-        xxx = inp[i];
+        input_btn = inp[i];
         break;
     }
 }
 
-xxx.value = "一键差评";
-xxx.onclick = "badit()";
+input_btn.value = "一键差评";
+input_btn.onclick = "badit()";
