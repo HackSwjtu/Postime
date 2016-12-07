@@ -1,10 +1,20 @@
 {
-  "name": "HackSwjtuDeanPK",
-  "version": "1.0",
-  "mainifest_version": 1,
-  "description": "西南交通大学教务系统一键评课插件",
-  "browser_action": {
-    "default_icon": "",
-    "default_popup": "popup.html"
-  }
+    "manifest_version": 2,
+    "name": "HackSwjtuDeanPK",
+    "version": "1.0",
+    "description": "西南交通大学教务系统一键评课插件",
+    "browser_action": {
+        "default_icon": {
+            "19": "images/icon19.png",
+            "38": "images/icon38.png"
+        },
+        "default_title": "HackSwjtuDeanPK",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://jiaowu.swjtu.edu.cn/*"],
+            "js": ["js/jquery.js", "js/courses_pk.js"]
+        }
+    ]
 }
