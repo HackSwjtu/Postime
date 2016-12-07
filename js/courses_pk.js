@@ -55,5 +55,5 @@ for (var i = 0; i < inp.length; ++ i){
     }
 }
 
-xxx.innerHTML = "一键差评";
+xxx.value = "一键差评";
 xxx.onclick = "badit()";

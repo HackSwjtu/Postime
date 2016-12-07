@@ -14,7 +14,8 @@
     "content_scripts": [
         {
             "matches": ["*://jiaowu.swjtu.edu.cn/*"],
-            "js": ["js/jquery.js", "js/courses_pk.js"]
+            "js": ["js/jquery.js", "js/courses_pk.js"],
+            "run_at": "document_end"
         }
     ]
 }
