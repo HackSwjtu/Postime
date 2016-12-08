@@ -16,7 +16,7 @@
     },
     "content_scripts": [
         {
-            "matches": ["*://jiaowu.swjtu.edu.cn/*"],
+            "matches": ["*://jiaowu.swjtu.edu.cn/servlet/AssessAction?SetAction=viewAssess&sid=*&templateFlag=0"],
             "js": ["js/jquery.js", "js/data_pk.js", "js/courses_pk.js"],
             "run_at": "document_end"
         }
