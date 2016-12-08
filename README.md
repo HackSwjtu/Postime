@@ -41,7 +41,7 @@ git clone https://github.com/HackSwjtu/HackSwjtuDeanPK.git
 
 ![](http://ofmxkmiv3.bkt.clouddn.com/PKflow4.png)
 
-## A & Q
+## Q & A
 
 > A：导入插件后打开教务系统的评价课程页面，没有看见页面变化？
 
