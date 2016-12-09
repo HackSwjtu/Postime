@@ -1,47 +1,47 @@
-//
-// function go(){
-//     var ps = $("input[name='problem_id']");
-//     console.log(ps.length);
-//     // The old code is $ ps != null
-//     // Have you learned JavaScript ?
-//     if (ps !== null && ps.length > 0) {
-//         var f = true;
-//         var ids = "", ans = "";
-//         for (var i = 0; i < ps.length; ++ i) {
-//             var id = $(ps[i]).val();
-//             var answer = getInputVal(id);
-//             if (answer === "" || answer === null || answer.length < 1) {
-//                 alert("教务君说需要填写完整的信息，否则无法提交");
-//                 $("[name='problem" + id + "']").focus();
-//                 f = false;
-//                 break;
-//             } else {
-//                 ids += ("," + id);
-//                 ans += ("," + answer);
-//             }
-//         }
-//         if (f === true) {
-//             $.post("AssessAction?SetAction=answer",
-//                 {
-//                     id: ids,
-//                     answer: ans,
-//                     assess_id: $("input[name='assess_id']").val(),
-//                     templateFlag: "0"
-//                 },
-//                 function() {
-//                     if (data.flag) {
-//                         alert("教务君说提交成功了！");
-//                         window.location.href = "http://jiaowu.swjtu.edu.cn:80/servlet/AssessAction?SetAction=studentList";
-//                     } else {
-//                         alert(data.error);
-//                     }
-//             });
-//             alert("test");
-//         } else {
-//             alert("教务君说无需提交，静待些时日再来吧");
-//         }
-//     }
-// }
+
+function go(){
+    var ps = $("input[name='problem_id']");
+    console.log(ps.length);
+    // The old code is $ ps != null
+    // Have you learned JavaScript ?
+    if (ps !== null && ps.length > 0) {
+        var f = true;
+        var ids = "", ans = "";
+        for (var i = 0; i < ps.length; ++ i) {
+            var id = $(ps[i]).val();
+            var answer = getInputVal(id);
+            if (answer === "" || answer === null || answer.length < 1) {
+                alert("教务君说需要填写完整的信息，否则无法提交");
+                $("[name='problem" + id + "']").focus();
+                f = false;
+                break;
+            } else {
+                ids += ("," + id);
+                ans += ("," + answer);
+            }
+        }
+        if (f === true) {
+            $.post("AssessAction?SetAction=answer",
+                {
+                    id: ids,
+                    answer: ans,
+                    assess_id: $("input[name='assess_id']").val(),
+                    templateFlag: "0"
+                },
+                function() {
+                    if (data.flag) {
+                        alert("教务君说提交成功了！");
+                        window.location.href = "http://jiaowu.swjtu.edu.cn:80/servlet/AssessAction?SetAction=studentList";
+                    } else {
+                        alert(data.error);
+                    }
+            });
+            alert("test");
+        } else {
+            alert("教务君说无需提交，静待些时日再来吧");
+        }
+    }
+}
 
 function badit() {
     var ind = 4;
@@ -74,18 +74,18 @@ function badit() {
     console.log(dg_ids);
     console.log(dg_ans);
 
-    // $.post("AssessAction?SetAction=answer",
-    //     {
-    //         id: dg_ids,
-    //         answer: dg_ans,
-    //         assess_id: $("input[name='assess_id']").val(),
-    //         templateFlag: "0"
-    //     },
-    //     function() {
-    //         if (data.flag) {
-    //             alert("教务君说提交成功了！");
-    //         } else {
-    //             alert(data.error);
-    //         }
-    // });
+    $.post("AssessAction?SetAction=answer",
+        {
+            id: dg_ids,
+            answer: dg_ans,
+            assess_id: $("input[name='assess_id']").val(),
+            templateFlag: "0"
+        },
+        function() {
+            if (data.flag) {
+                alert("教务君说提交成功了！");
+            } else {
+                alert(data.error);
+            }
+    });
 }
