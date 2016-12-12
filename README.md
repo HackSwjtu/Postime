@@ -7,6 +7,13 @@ Hackers assess courses with no time. 😎
 
 ![](images/icon128.png)
 
+## Feature
+
+- [x] 一键课程评价 
+- [x] 一键导师评价
+- [ ] 一键实践评价
+- [ ] 自助学期评价
+
 ## Description
 
 针对于西南交通大学教务系统的一键课程评价的 Chrome 插件。可以迅速在查看成绩之前迅速评价课程，避免时间浪费。随机生成课程评价，抛开脑洞。
