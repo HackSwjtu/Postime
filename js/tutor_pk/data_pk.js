@@ -27,7 +27,7 @@ function badit(ind) {
             templateFlag: "1"
         }, function(data) {
             if (data.flag) {
-                alert("教务君说提交成功");
+                alert("教务君说提交成功。返回上一个页面刷新即可。");
             }
             history.go(-1);
         }
