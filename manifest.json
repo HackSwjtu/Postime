@@ -29,6 +29,10 @@
             "matches": ["*://jiaowu.swjtu.edu.cn/servlet/AssessAction?SetAction=viewAssess&sid=*&templateFlag=1&type=2"],
             "js": ["js/jquery.js", "js/practice_pk/data_pk.js", "js/practice_pk/practice_pk.js"],
             "run_at": "document_end"
-		}
+		},{
+            "matches": ["*://jiaowu.swjtu.edu.cn/servlet/AppraiseStudentAction?Action=submitInfo&Forward=Term"],
+            "js": ["js/jquery.js", "js/semester_pk/semester_pk.js"],
+            "run_at": "document_end"
+        }
     ]
 }
