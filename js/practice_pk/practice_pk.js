@@ -5,3 +5,10 @@ $('<input/>', {
     'value': '一键差评',
     'onclick': 'badit(0)',
 }).appendTo(box);
+
+
+$('<input/>', {
+    'type': 'button',
+    'value': '一键好评',
+    'onclick': 'badit(1)',
+}).appendTo(box);
