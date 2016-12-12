@@ -19,6 +19,11 @@
             "matches": ["*://jiaowu.swjtu.edu.cn/servlet/AssessAction?SetAction=viewAssess&sid=*&templateFlag=0"],
             "js": ["js/jquery.js", "js/courses_pk/data_pk.js", "js/courses_pk/courses_pk.js"],
             "run_at": "document_end"
+        },
+        {
+            "matches": ["*://jiaowu.swjtu.edu.cn/servlet/AssessAction?SetAction=viewAssess&sid=*&templateFlag=1&type=1"],
+            "js": ["js/jquery.js", "js/tutor_pk/data_pk.js", "js/tutor_pk/tutor_pk.js"],
+            "run_at": "document_end"
         }
     ]
 }
