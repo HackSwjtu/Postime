@@ -1,11 +1,16 @@
 {
     "manifest_version": 2,
     "name": "HackSwjtuDeanPK",
-    "version": "2.0",
+    "version": "2.1",
     "description": "西南交通大学教务系统一键评课插件",
     "permissions": [
         "contextMenus"
     ],
+    "icons": {
+        "16": "images/icon16.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png"
+    },
     "browser_action": {
         "default_icon": {
             "19": "images/icon19.png",
@@ -29,10 +34,12 @@
             "matches": ["*://jiaowu.swjtu.edu.cn/servlet/AssessAction?SetAction=viewAssess&sid=*&templateFlag=1&type=2"],
             "js": ["js/jquery.js", "js/practice_pk/data_pk.js", "js/practice_pk/practice_pk.js"],
             "run_at": "document_end"
-		},{
+		},
+        {
             "matches": ["*://jiaowu.swjtu.edu.cn/servlet/AppraiseStudentAction?Action=submitInfo&Forward=Term"],
             "js": ["js/jquery.js", "js/semester_pk/semester_pk.js"],
             "run_at": "document_end"
         }
-    ]
+    ],
+    "homepage_url":"https://github.com/HackSwjtu/HackSwjtuDeanPK"
 }
