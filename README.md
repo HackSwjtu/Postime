@@ -9,6 +9,7 @@ Hackers assess courses with no time. 😎
 
 ## Feature
 
+- [x] 自动显示课程评价的所有问题 (2017.2.10 功能更新)
 - [x] 一键课程评价 (2016.12.12 功能更新)
 - [x] 一键导师评价 (2016.12.12 功能更新)
 - [x] 一键暑期实习评价 (2016.12.12 功能更新)
@@ -58,7 +59,7 @@ A: 在新版的西南交大教务系统中采用的页面中嵌套页面的方�
 
 MIT License
 
-Copyright (c) 2016 Hack Swjtu
+Copyright (c) 2017 Hack Swjtu
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

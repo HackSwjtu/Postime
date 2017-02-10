@@ -1,6 +1,4 @@
 //************修改 dom 界面***************
-if (true)
-{
 var box = $("td[colspan='2']")[1];
 box.innerHTML += "&nbsp;&nbsp;";
 $('<input/>', {
@@ -14,12 +12,9 @@ $('<input/>', {
     'value': '一键差评',
     'onclick': 'badit(4)',
 }).appendTo(box);
-}
 
 
 //*************前置按钮*******************
-if (true)
-{
 var frontbox=document.createElement("div");;
 $('<input/>', {
     'type': 'button',
@@ -33,12 +28,9 @@ $('<input/>', {
     'onclick': 'badit(4)',
 }).appendTo(frontbox);
 $('#answerForm').before(frontbox);
-}
 
 
 //***********显示所有问题*****************
-if (true)
-{
 for (var i=1;i<=17;i++)
 {
 	document.getElementById("post-problem"+i).style.display="block";
@@ -50,7 +42,6 @@ for (var i=1;i<=17;i++)
 		for(var j=0;j<ins.length;j++)
 		{
 			ins[j].onclick=function(){};
-		}
 		}
 	}
 }
