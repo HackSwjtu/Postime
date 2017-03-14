@@ -7,7 +7,7 @@ Hackers assess courses with no time. 😎
 
 ![](images/icon128.png)
 
-## Feature
+## Features
 
 - [x] 自动显示课程评价的所有问题 (2017.2.10 功能更新)
 - [x] 一键课程评价 (2016.12.12 功能更新)
@@ -21,7 +21,7 @@ Hackers assess courses with no time. 😎
 
 ## Screenshot
 
-![Screenshot](http://ofmxkmiv3.bkt.clouddn.com/HackSwjtuDeanPK-screenshot2.png)
+![Screenshot](assets/screenshots/2017-03-14.png)
 
 ## Usage
 
