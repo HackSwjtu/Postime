@@ -21,7 +21,8 @@ Hackers assess courses with no time. 😎
 
 ## Screenshot
 
-![Screenshot](assets/screenshots/2017-03-14.png)
+![Screenshot](assets/screenshots/2017-03-15-2.png)
+![Screenshot](assets/screenshots/2017-03-15-3.png)
 
 ## Usage
 
