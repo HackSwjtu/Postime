@@ -46,7 +46,12 @@ git clone https://github.com/HackSwjtu/HackSwjtuDeanPK.git
 
 ![](http://ofmxkmiv3.bkt.clouddn.com/PKflow3.png)
 
-### 4. 打开教师评价页面立即使用
+### 4. 鼠标右键点击问卷链接,在新标签或新窗口打开
+
+![](assets/usage/4-1.png)
+![](assets/usage/4-2.png)
+
+### 5. 打开教师评价页面立即使用
 
 ![](http://ofmxkmiv3.bkt.clouddn.com/PKflow4.png)
 
