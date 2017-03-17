@@ -1,15 +1,21 @@
 {
     "manifest_version": 2,
-    "name": "HackSwjtuDeanPK",
-    "version": "2.1",
-    "description": "西南交通大学教务系统一键评课插件",
+    "name": "Postime",
+    "version": "3.0",
+    "description": "西南交通大学教务系统一键评课插件&登录验证码识别",
     "permissions": [
-        "contextMenus"
+        "contextMenus",
+        "http://wangzhe.cloud/*",
+        "https://www.google-analytics.com/",
+        "storage"
     ],
     "icons": {
         "16": "images/icon16.png",
         "48": "images/icon48.png",
         "128": "images/icon128.png"
+    },
+    "background": {
+        "scripts": ["js/contextMenus.js"]
     },
     "browser_action": {
         "default_icon": {
@@ -39,7 +45,34 @@
             "matches": ["*://jiaowu.swjtu.edu.cn/servlet/AppraiseStudentAction?Action=submitInfo&Forward=Term"],
             "js": ["js/jquery.js", "js/semester_pk/semester_pk.js"],
             "run_at": "document_end"
+        },
+
+        {
+            "all_frames": true,
+            "matches": ["<all_urls>"],
+            "js": ["js/lib/math.js", "js/lib/image.js", "js/lib/json.js", "js/lib/ga.js"]
+        },
+        {
+            "matches": ["*://jiaowu.swjtu.edu.cn/service/login.jsp*", "*://jiaowu.swjtu.edu.cn//service/login.jsp*"],
+            "js": ["js/verif_code/student.js"]
+        },
+        {
+            "matches": ["*://jiaowu.swjtu.edu.cn/servlet/UserLoginSQLAction", "*://jiaowu.swjtu.edu.cn//servlet/UserLoginSQLAction"],
+            "js": ["js/verif_code/bounce.js", "js/verif_code/advertise.js", "js/verif_code/studentclicked.js"]
+        },
+        {
+            "matches": ["*://dean.swjtu.edu.cn/service/login.jsp*"],
+            "js": ["js/verif_code/genearch.js"]
+        },
+        {
+            "all_frames": true,
+            "matches": ["*://service.swjtu.edu.cn:*/selfservice*"],
+            "js": ["js/verif_code/network.js"]
         }
     ],
-    "homepage_url":"https://github.com/HackSwjtu/HackSwjtuDeanPK"
+    "web_accessible_resources": [
+        "data/*.*",
+        "images/*.png"
+    ],
+    "homepage_url":"https://github.com/HackSwjtu/Postime"
 }
