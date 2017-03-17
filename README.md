@@ -1,9 +1,9 @@
-# HackSwjtuDeanPK
+# Postime
 
 ![](https://img.shields.io/badge/HackSwjtu-Chrome--Plugin-green.svg)
 ![](https://img.shields.io/badge/license-MIT-green.svg?style=flat)
 
-Hackers assess courses with no time. 😎
+Hackers assess courses & login with no time. 😎
 
 ![](images/icon128.png)
 
@@ -20,8 +20,8 @@ Hackers assess courses with no time. 😎
 
 ## Description
 
-针对于西南交通大学教务系统的一键课程评价的 Chrome 插件。可以迅速在查看成绩之前迅速评价课程，避免时间浪费。随机生成课程评价，抛开脑洞。
-
+1. 针对于西南交通大学教务系统的一键课程评价的 Chrome 插件。可以迅速在查看成绩之前迅速评价课程，避免时间浪费。随机生成课程评价，抛开脑洞。
+2. 自动识别教务登录验证码,每次使用节省的1s请自觉续给长者。
 ## Screenshot
 
 ![Screenshot](assets/screenshots/2017-03-15-2.png)
