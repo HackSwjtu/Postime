@@ -53,15 +53,30 @@
             "js": ["js/lib/math.js", "js/lib/image.js", "js/lib/json.js", "js/lib/ga.js"]
         },
         {
-            "matches": ["*://jiaowu.swjtu.edu.cn/service/login.jsp*", "*://jiaowu.swjtu.edu.cn//service/login.jsp*"],
+            "matches": [
+                "*://jiaowu.swjtu.edu.cn/service/login.jsp*",
+                "*://jiaowu.swjtu.edu.cn//service/login.jsp*",
+                "*://202.115.67.50/service/login.jsp*",
+                "*://202.115.71.132/servie/login.jsp*"
+            ],
             "js": ["js/verif_code/student.js"]
         },
         {
-            "matches": ["*://jiaowu.swjtu.edu.cn/servlet/UserLoginSQLAction", "*://jiaowu.swjtu.edu.cn//servlet/UserLoginSQLAction"],
+            "matches": [
+                "*://jiaowu.swjtu.edu.cn/servlet/UserLoginSQLAction", 
+                "*://jiaowu.swjtu.edu.cn//servlet/UserLoginSQLAction",
+                "*://202.115.67.50/servlet/UserLoginSQLAction",
+                "*://202.115.71.132/service/UserLoginSQLAction"
+            ],
             "js": ["js/verif_code/bounce.js", "js/verif_code/advertise.js", "js/verif_code/studentclicked.js"]
         },
         {
-            "matches": ["*://dean.swjtu.edu.cn/service/login.jsp*"],
+            "matches": [
+                "*://dean.swjtu.edu.cn/service/login.jsp*",
+                "*://jiaowu.swjtu.edu.cn//service/login.jsp*",
+                "*://202.115.67.50/service/login.jsp*",
+                "*://202.115.71.132/servie/login.jsp*"
+            ],
             "js": ["js/verif_code/genearch.js"]
         },
         {
