@@ -88,8 +88,7 @@
     ],
     "web_accessible_resources": [
         "data/*.*",
-        "images/*.png",
-        "js/verif_code/inject/autoGetphoto.js"
+        "images/*.png"
     ],
     "homepage_url":"https://github.com/HackSwjtu/Postime"
 }
