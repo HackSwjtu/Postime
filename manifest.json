@@ -1,95 +1,146 @@
 {
-    "manifest_version": 2,
-    "name": "Postime",
-    "version": "3.0",
-    "description": "西南交通大学教务系统一键评课插件&登录验证码识别",
-    "permissions": [
-        "contextMenus",
-        "http://wangzhe.cloud/*",
-        "https://www.google-analytics.com/",
-        "storage"
-    ],
-    "icons": {
-        "16": "images/icon16.png",
-        "48": "images/icon48.png",
-        "128": "images/icon128.png"
+  "manifest_version": 2,
+  "name": "Postime",
+  "version": "3.0",
+  "description": "西南交通大学教务系统一键评课插件&登录验证码识别",
+  "permissions": [
+    "contextMenus",
+    "http://wangzhe.cloud/*",
+    "https://www.google-analytics.com/",
+    "storage"
+  ],
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "background": {
+    "scripts": [
+      "js/contextMenus.js"
+    ]
+  },
+  "browser_action": {
+    "default_icon": {
+      "19": "images/icon19.png",
+      "38": "images/icon38.png"
     },
-    "background": {
-        "scripts": ["js/contextMenus.js"]
+    "default_title": "HackSwjtuDeanPK",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://jiaowu.swjtu.edu.cn/servlet/AssessAction?SetAction=viewAssess&sid=*&templateFlag=0"
+      ],
+      "js": [
+        "js/jquery.js",
+        "js/courses_pk/data_pk.js",
+        "js/courses_pk/courses_pk.js"
+      ],
+      "run_at": "document_end"
     },
-    "browser_action": {
-        "default_icon": {
-            "19": "images/icon19.png",
-            "38": "images/icon38.png"
-        },
-        "default_title": "HackSwjtuDeanPK",
-        "default_popup": "popup.html"
+    {
+      "matches": [
+        "*://jiaowu.swjtu.edu.cn/servlet/AssessAction?SetAction=viewAssess&sid=*&templateFlag=1&type=1"
+      ],
+      "js": [
+        "js/jquery.js",
+        "js/tutor_pk/data_pk.js",
+        "js/tutor_pk/tutor_pk.js"
+      ],
+      "run_at": "document_end"
     },
-    "content_scripts": [
-        {
-            "matches": ["*://jiaowu.swjtu.edu.cn/servlet/AssessAction?SetAction=viewAssess&sid=*&templateFlag=0"],
-            "js": ["js/jquery.js", "js/courses_pk/data_pk.js", "js/courses_pk/courses_pk.js"],
-            "run_at": "document_end"
-        },
-        {
-            "matches": ["*://jiaowu.swjtu.edu.cn/servlet/AssessAction?SetAction=viewAssess&sid=*&templateFlag=1&type=1"],
-            "js": ["js/jquery.js", "js/tutor_pk/data_pk.js", "js/tutor_pk/tutor_pk.js"],
-            "run_at": "document_end"
-        },
-		{
-            "matches": ["*://jiaowu.swjtu.edu.cn/servlet/AssessAction?SetAction=viewAssess&sid=*&templateFlag=1&type=2"],
-            "js": ["js/jquery.js", "js/practice_pk/data_pk.js", "js/practice_pk/practice_pk.js"],
-            "run_at": "document_end"
-		},
-        {
-            "matches": ["*://jiaowu.swjtu.edu.cn/servlet/AppraiseStudentAction?Action=submitInfo&Forward=Term"],
-            "js": ["js/jquery.js", "js/semester_pk/semester_pk.js"],
-            "run_at": "document_end"
-        },
-
-        {
-            "all_frames": true,
-            "matches": ["<all_urls>"],
-            "js": ["js/lib/math.js", "js/lib/image.js", "js/lib/json.js", "js/lib/ga.js"]
-        },
-        {
-            "matches": [
-                "*://jiaowu.swjtu.edu.cn/service/login.jsp*",
-                "*://jiaowu.swjtu.edu.cn//service/login.jsp*",
-                "*://202.115.67.50/service/login.jsp*",
-                "*://202.115.71.132/service/login.jsp*",
-                "*://202.115.67.4/service/login.jsp*"
-            ],
-            "js": ["js/verif_code/student.js"]
-        },
-        {
-            "matches": [
-                "*://jiaowu.swjtu.edu.cn/servlet/UserLoginSQLAction", 
-                "*://jiaowu.swjtu.edu.cn//servlet/UserLoginSQLAction",
-                "*://202.115.67.50/servlet/UserLoginSQLAction",
-                "*://202.115.71.132/service/UserLoginSQLAction"
-            ],
-            "js": ["js/verif_code/bounce.js", "js/verif_code/advertise.js", "js/verif_code/studentclicked.js"]
-        },
-        {
-            "matches": [
-                "*://dean.swjtu.edu.cn/service/login.jsp*",
-                "*://jiaowu.swjtu.edu.cn//service/login.jsp*",
-                "*://202.115.67.50/service/login.jsp*",
-                "*://202.115.71.132/service/login.jsp*"
-            ],
-            "js": ["js/verif_code/genearch.js"]
-        },
-        {
-            "all_frames": true,
-            "matches": ["*://service.swjtu.edu.cn:*/selfservice*"],
-            "js": ["js/verif_code/network.js"]
-        }
-    ],
-    "web_accessible_resources": [
-        "data/*.*",
-        "images/*.png",
-        "js/verif_code/inject/autoGetphoto.js"
-    ],
-    "homepage_url":"https://github.com/HackSwjtu/Postime"
+    {
+      "matches": [
+        "*://jiaowu.swjtu.edu.cn/servlet/AssessAction?SetAction=viewAssess&sid=*&templateFlag=1&type=2"
+      ],
+      "js": [
+        "js/jquery.js",
+        "js/practice_pk/data_pk.js",
+        "js/practice_pk/practice_pk.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "*://jiaowu.swjtu.edu.cn/servlet/AppraiseStudentAction?Action=submitInfo&Forward=Term"
+      ],
+      "js": [
+        "js/jquery.js",
+        "js/semester_pk/semester_pk.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      //student login
+      "matches": [
+        "*://jiaowu.swjtu.edu.cn/service/login.jsp*",
+        "*://jiaowu.swjtu.edu.cn//service/login.jsp*",
+        "*://202.115.67.50/service/login.jsp*",
+        "*://202.115.71.132/service/login.jsp*"
+      ],
+      "js": [
+        "js/lib/misc.js",
+        "js/lib/ga.js",
+        "js/verif_code/student.js"
+      ]
+    },
+    {
+      //student login which must get RandomImg first
+      "matches": [
+        "*://202.115.67.4/service/login.jsp*"
+      ],
+      "js": [
+        "js/lib/misc.js",
+        "js/lib/ga.js",
+        "js/verif_code/genearch.js"
+      ]
+    },
+    {
+      //student login result
+      "matches": [
+        "*://jiaowu.swjtu.edu.cn/servlet/UserLoginSQLAction",
+        "*://jiaowu.swjtu.edu.cn//servlet/UserLoginSQLAction",
+        "*://202.115.67.50/servlet/UserLoginSQLAction",
+        "*://202.115.71.132/service/UserLoginSQLAction",
+        "*://202.115.67.4/servlet/UserLoginSQLAction"
+      ],
+      "js": [
+        "js/lib/misc.js",
+        "js/lib/ga.js",
+        "js/verif_code/bounce.js",
+        "js/verif_code/advertise.js",
+        "js/verif_code/studentclicked.js"
+      ]
+    },
+    {
+      //genearch login
+      "matches": [
+        "*://dean.swjtu.edu.cn/service/login.jsp*"
+      ],
+      "js": [
+        "js/lib/misc.js",
+        "js/lib/ga.js",
+        "js/verif_code/genearch.js"
+      ]
+    },
+    {
+      //network sevice
+      "all_frames": true,
+      "matches": [
+        "*://service.swjtu.edu.cn:*/selfservice*"
+      ],
+      "js": [
+        "js/lib/misc.js",
+        "js/lib/ga.js",
+        "js/verif_code/network.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    "data/*.*",
+    "images/*.png",
+    "js/verif_code/inject/autoGetphoto.js"
+  ],
+  "homepage_url": "https://github.com/HackSwjtu/Postime"
 }

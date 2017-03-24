@@ -8,7 +8,6 @@ var x = (Math.random() * 1920).toFixed() % (width - 2*w), y = (Math.random() * 1
 var v = 0, dirx = 1, diry = 1, limitv = 100, as = (Math.random() * 10).toFixed() % 5 + 5;
 function Move() {
     if (Math.abs(v) >= limitv) {
-        console.log(v, as);
         as = -as;
     }
     v += as;
@@ -26,7 +25,6 @@ function Move() {
         diry = -diry;
     var a = document.getElementById("photo");
     a.setAttribute("style", "position:absolute;left:" + x + "px;top:" + y + "px;");
-    console.log(a);
     setTimeout(Move, 30);
 }
 

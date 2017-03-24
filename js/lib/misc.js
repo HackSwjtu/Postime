@@ -1,3 +1,9 @@
+/**
+ * Created by wz on 17-3-24.
+ */
+//some miscellaneous functions
+
+//image processing
 function noiseDetect(data, x, y, width, height) {
     var vector = [[0, -1], [0, 1], [1, -1], [1, 1], [-1, -1], [-1, 1], [1, 0], [-1, 0]];
     var all = 0;
@@ -252,4 +258,99 @@ function img2string(l, name, callback1) {
             verif_code.push(String.fromCharCode(base + recognize(ws, bs, x[i])));
         callback1(verif_code.join(''));
     });
+}
+
+
+
+//json
+function getData(name, callback) {
+    id = chrome.runtime.id;
+    url = chrome.runtime.getURL("data/" + name);
+    var json_req = new XMLHttpRequest();
+    json_req.overrideMimeType("applicatoin/json");
+    json_req.open("get", url, true);
+    json_req.onreadystatechange = function () {
+        if (json_req.readyState == 4) {
+            data = JSON.parse(json_req.responseText);
+            callback(data);
+        }
+    };
+    json_req.send();
+}
+
+
+//math
+function mat_mul(a, b) {
+    var r1 = a.length;
+    var c1 = a[0].length;
+    var c2 = b[0].length;
+    var ret = Array();
+    for (var i = 0; i < r1; i++) {
+        ret[i] = Array();
+        for (var j = 0; j < c2; j++) {
+            ret[i][j] = 0.0;
+        }
+    }
+    for (var i = 0; i < r1; i++) {
+        for (var j = 0; j < c2; j++) {
+            for (var t = 0; t < c1; t++) {
+                ret[i][j] += a[i][t] * b[t][j];
+            }
+        }
+    }
+    return ret;
+}
+
+function mat_add(a, b) {
+    var ret = Array();
+    for (var i = 0; i < b.length; i++) {
+        ret[i] = new Array();
+        ret[i][0] = a[i][0] + b[i][0];
+    }
+    return ret;
+}
+
+function argmin(a, b, c) {
+    var minn = 1000000;
+    var index;
+    for (var i = b; i < c; i++) {
+        if (a[i] < minn) {
+            minn = a[i];
+            index = i;
+        }
+    }
+    return index - b;
+}
+
+function argmax(a, b, c) {
+    var maxx = -1.0;
+    var index;
+    for (var i = b; i < c; i++) {
+        if (Number(a[i]) > maxx) {
+            maxx = Number(a[i]);
+            index = i;
+        }
+    }
+    return index - b;
+}
+
+function argsum(a, b, c) {
+    var ret = 0;
+    for (var i = b; i < c; i++) {
+        ret += a[i];
+    }
+    return ret;
+}
+
+
+//DOM operations
+function injectScript(filepath)
+{
+    var injectXML=new XMLHttpRequest();
+    injectXML.open("GET",chrome.extension.getURL(filepath),false);
+    injectXML.send();
+    var injectText=document.createElement("script");
+    injectText.type="text/javascript";
+    injectText.innerHTML=injectXML.responseText;
+    document.body.appendChild(injectText);
 }
