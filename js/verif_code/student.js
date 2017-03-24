@@ -47,4 +47,26 @@ function main() {
     });
 }
 
-main();
+function injectScript(filepath)
+{
+    var injectXML=new XMLHttpRequest();
+    injectXML.open("GET",chrome.extension.getURL(filepath),false);
+    injectXML.send();
+    var injectText=document.createElement("script");
+    injectText.type="text/javascript";
+    injectText.innerHTML=injectXML.responseText;
+    document.body.appendChild(injectText);
+}
+
+if (!document.getElementById("imgRandom"))
+{
+    injectScript("js/verif_code/inject/autoGetphoto.js");   //自动获取验证码
+    document.getElementById("imgRandom").onload=function()
+    {
+        main();
+    }
+}
+else
+{
+    main();
+}

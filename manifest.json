@@ -57,7 +57,8 @@
                 "*://jiaowu.swjtu.edu.cn/service/login.jsp*",
                 "*://jiaowu.swjtu.edu.cn//service/login.jsp*",
                 "*://202.115.67.50/service/login.jsp*",
-                "*://202.115.71.132/servie/login.jsp*"
+                "*://202.115.71.132/servie/login.jsp*",
+                "*://202.115.67.4/service/login.jsp*"
             ],
             "js": ["js/verif_code/student.js"]
         },
@@ -87,7 +88,8 @@
     ],
     "web_accessible_resources": [
         "data/*.*",
-        "images/*.png"
+        "images/*.png",
+        "js/verif_code/inject/autoGetphoto.js"
     ],
     "homepage_url":"https://github.com/HackSwjtu/Postime"
 }
